@@ -9,9 +9,10 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         :root {
-            --green: #22c55e;
-            --green-dim: #15803d;
-            --green-glow: rgba(34, 197, 94, 0.4);
+            --coral: #FF6B6B;
+            --coral-dim: #e05555;
+            --coral-glow: rgba(255, 107, 107, 0.4);
+            --coral-bg: rgba(255, 107, 107, 0.15);
             --black: #0a0a0a;
             --dark: #111111;
             --gray: #1a1a1a;
@@ -69,7 +70,7 @@
         }
         
         h1 span {
-            color: var(--green);
+            color: var(--coral);
         }
         
         .tagline {
@@ -92,7 +93,7 @@
             box-shadow: 
                 0 0 0 2px #222,
                 0 25px 50px rgba(0, 0, 0, 0.6),
-                0 0 50px rgba(34, 197, 94, 0.15);
+                0 0 50px rgba(255, 107, 107, 0.15);
         }
         
         .phone-screen {
@@ -168,10 +169,10 @@
         .detection-box {
             width: 80px;
             height: 32px;
-            border: 2.5px solid var(--green);
+            border: 2.5px solid var(--coral);
             border-radius: 6px;
             margin: 0 auto 12px;
-            box-shadow: 0 0 15px var(--green-glow), 0 0 30px rgba(34, 197, 94, 0.2);
+            box-shadow: 0 0 15px var(--coral-glow), 0 0 30px rgba(255, 107, 107, 0.2);
             animation: glow 2s ease-in-out infinite;
             display: flex;
             align-items: center;
@@ -179,33 +180,33 @@
         }
         
         @keyframes glow {
-            0%, 100% { box-shadow: 0 0 15px var(--green-glow), 0 0 30px rgba(34, 197, 94, 0.2); }
-            50% { box-shadow: 0 0 25px var(--green-glow), 0 0 45px rgba(34, 197, 94, 0.35); }
+            0%, 100% { box-shadow: 0 0 15px var(--coral-glow), 0 0 30px rgba(255, 107, 107, 0.2); }
+            50% { box-shadow: 0 0 25px var(--coral-glow), 0 0 45px rgba(255, 107, 107, 0.35); }
         }
         
         .detected-number {
             font-size: 14px;
             font-weight: 600;
-            color: var(--green);
+            color: var(--coral);
         }
         
-        .swipe-hint {
+        .tap-hint {
             margin-top: 20px;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: var(--green);
+            background: var(--coral);
             color: #000;
             padding: 8px 18px;
             border-radius: 20px;
             font-size: 12px;
             font-weight: 600;
-            animation: swipeHint 1.5s ease-in-out infinite;
+            animation: tapHint 1s ease-in-out infinite;
         }
         
-        @keyframes swipeHint {
-            0%, 100% { transform: translateX(0); }
-            50% { transform: translateX(12px); }
+        @keyframes tapHint {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.08); }
         }
         
         .total-overlay {
@@ -230,7 +231,7 @@
         .total-value {
             font-size: 28px;
             font-weight: 700;
-            color: var(--green);
+            color: var(--coral);
         }
         
         .total-numbers {
@@ -241,8 +242,8 @@
         }
         
         .total-number {
-            background: rgba(34, 197, 94, 0.15);
-            color: var(--green);
+            background: var(--coral-bg);
+            color: var(--coral);
             padding: 3px 10px;
             border-radius: 12px;
             font-size: 12px;
@@ -257,7 +258,7 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: var(--green);
+            background: var(--coral);
             color: var(--black);
             padding: 18px 45px;
             border-radius: 30px;
@@ -265,12 +266,12 @@
             font-weight: 600;
             text-decoration: none;
             transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 10px 40px var(--green-glow);
+            box-shadow: 0 10px 40px var(--coral-glow);
         }
         
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 50px var(--green-glow);
+            box-shadow: 0 15px 50px var(--coral-glow);
         }
         
         .features {
@@ -336,7 +337,7 @@
         </header>
         
         <section class="hero">
-            <h1>Point at numbers.<br><span>Swipe. Done.</span></h1>
+            <h1>Point at numbers.<br><span>Tap. Done.</span></h1>
             <p class="tagline">The fastest way to add up boxes, weights, receipts—anything with numbers. No typing. No errors.</p>
             
             <div class="phone-wrapper">
@@ -353,14 +354,14 @@
                                 <div class="detection-box">
                                     <span class="detected-number">45</span>
                                 </div>
-                                <div class="swipe-hint">
-                                    ⟶ Swipe to add
+                                <div class="tap-hint">
+                                    ✓ Tap to add
                                 </div>
                             </div>
                             
                             <div class="total-overlay">
-                                <div class="total-label">Total Weight</div>
-                                <div class="total-value">267 lbs</div>
+                                <div class="total-label">Total</div>
+                                <div class="total-value">267</div>
                                 <div class="total-numbers">
                                     <span class="total-number">45</span>
                                     <span class="total-number">32</span>
@@ -401,7 +402,7 @@
         </section>
         
         <footer>
-            <p>© 2026 SumCam. Coming soon to iOS.</p>
+            <p>© 2026 SumCam. Available on iOS.</p>
         </footer>
     </div>
 </body>
