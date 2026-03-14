@@ -115,7 +115,6 @@
             filter: blur(3px);
         }
         
-        /* Distant pallets - blurry */
         .distant-shelf {
             position: absolute;
             top: 12%;
@@ -161,7 +160,7 @@
             z-index: 100;
         }
         
-        /* Top bar */
+        /* Top bar - exact match to app */
         .top-bar {
             position: absolute;
             top: 34px;
@@ -170,86 +169,92 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 16px;
+            padding: 10px 20px;
             background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
             z-index: 50;
         }
         
         .top-left {
             display: flex;
-            align-items: center;
-            gap: 8px;
+            gap: 6px;
         }
         
         .top-center {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 24px;
+            font-size: 26px;
             font-weight: 700;
             color: var(--coral);
+            flex: 1;
+            text-align: center;
         }
         
         .top-right {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
         }
         
         .icon-btn {
-            width: 32px;
-            height: 32px;
+            width: 36px;
+            height: 36px;
             background: var(--gray);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 14px;
+            font-size: 16px;
+        }
+        
+        .icon-btn.coral {
+            color: var(--coral);
         }
         
         .clear-btn {
-            font-size: 12px;
+            font-size: 13px;
+            font-weight: 500;
             color: white;
-            padding: 6px 12px;
+            padding: 8px 14px;
             background: var(--gray);
-            border-radius: 16px;
+            border-radius: 20px;
         }
         
-        /* History (left side) */
+        /* History - LEFT side like app */
         .history {
             position: absolute;
-            left: 8px;
-            top: 100px;
+            left: 12px;
+            top: 140px;
             display: flex;
             flex-direction: column;
             gap: 2px;
             z-index: 40;
+            background: rgba(0,0,0,0.3);
+            padding: 8px 6px;
+            border-radius: 8px;
             max-width: 80px;
         }
         
         .history-num {
-            font-size: 11px;
+            font-size: 12px;
             font-family: monospace;
-            color: rgba(255,255,255,0.5);
-            font-weight: bold;
+            font-weight: 700;
+            color: rgba(255,255,255,0.4);
             text-align: left;
         }
         
         /* Main box in focus */
         .focus-box {
             position: absolute;
-            top: 42%;
+            top: 38%;
             left: 50%;
             transform: translate(-50%, -50%);
             background: white;
-            padding: 16px 24px;
+            padding: 14px 20px;
             border-radius: 6px;
             box-shadow: 0 8px 30px rgba(0,0,0,0.4);
             z-index: 15;
         }
         
         .box-label-main {
-            font-size: 42px;
+            font-size: 38px;
             font-weight: 800;
             color: #111;
             letter-spacing: -2px;
@@ -261,37 +266,38 @@
             margin-top: 2px;
         }
         
-        /* Target frame - smaller detection area */
+        /* Target frame - 150x150 SQUARE like app */
         .target-frame {
             position: absolute;
-            top: 42%;
+            top: 38%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 120px;
-            height: 80px;
+            width: 130px;
+            height: 130px;
             border: 3px solid var(--coral);
-            border-radius: 10px;
+            border-radius: 12px;
             z-index: 10;
-            box-shadow: 0 0 25px var(--coral-glow), inset 0 0 20px var(--coral-glow);
+            box-shadow: 0 0 25px var(--coral-glow), inset 0 0 25px var(--coral-glow);
         }
         
         /* Detected number inside frame */
         .detected-badge {
             position: absolute;
-            bottom: -35px;
+            bottom: -40px;
             left: 50%;
             transform: translateX(-50%);
             background: linear-gradient(135deg, var(--coral), var(--coral-dim));
             color: white;
-            padding: 6px 16px;
-            border-radius: 18px;
-            font-size: 16px;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 18px;
             font-weight: 700;
             z-index: 25;
-            box-shadow: 0 3px 12px rgba(255,107,107,0.4);
+            box-shadow: 0 4px 15px rgba(255,107,107,0.4);
+            white-space: nowrap;
         }
         
-        /* Other boxes in background - blurry */
+        /* Blurry background boxes */
         .bg-box {
             position: absolute;
             background: white;
@@ -313,7 +319,7 @@
         .bg-box-3 { bottom: 48%; left: 22%; }
         .bg-box-4 { bottom: 52%; right: 12%; }
         
-        /* Bottom panel */
+        /* Bottom panel - exact match */
         .bottom-panel {
             position: absolute;
             bottom: 0;
@@ -321,38 +327,51 @@
             right: 0;
             background: rgba(0,0,0,0.85);
             backdrop-filter: blur(20px);
-            padding: 14px 20px 30px;
+            padding: 16px 20px 40px;
             z-index: 60;
         }
         
         .hint-text {
-            font-size: 12px;
+            font-size: 14px;
+            font-weight: 500;
             color: var(--text-gray);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             text-align: center;
         }
         
         .number-scroll {
             display: flex;
-            gap: 10px;
+            gap: 12px;
             overflow-x: auto;
             justify-content: center;
             padding: 4px 0;
         }
         
         .num-btn {
-            min-width: 60px;
-            height: 44px;
+            width: 80px;
+            height: 60px;
             background: linear-gradient(135deg, var(--coral), var(--coral-dim));
-            border-radius: 10px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 16px;
+            font-size: 24px;
             font-weight: 700;
             color: white;
             flex-shrink: 0;
-            box-shadow: 0 3px 12px rgba(255,107,107,0.3);
+            box-shadow: 0 4px 15px rgba(255,107,107,0.3);
+        }
+        
+        .clear-detected {
+            display: block;
+            margin: 10px auto 0;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-gray);
+            padding: 6px 16px;
+            background: var(--dark);
+            border-radius: 20px;
+            width: fit-content;
         }
         
         .cta {
@@ -462,7 +481,7 @@
                         
                         <div class="notch"></div>
                         
-                        <!-- Top bar - Total centered -->
+                        <!-- Top bar - exact match -->
                         <div class="top-bar">
                             <div class="top-left">
                                 <div class="icon-btn">↩</div>
@@ -470,20 +489,19 @@
                             </div>
                             <div class="top-center">Total: 267</div>
                             <div class="top-right">
-                                <div class="icon-btn" style="color: var(--coral);">📷</div>
+                                <div class="icon-btn coral">📷</div>
                                 <div class="icon-btn">🔦</div>
                                 <div class="clear-btn">Clear</div>
                             </div>
                         </div>
                         
-                        <!-- History (left side) -->
+                        <!-- History - LEFT side -->
                         <div class="history">
                             <span class="history-num">44</span>
                             <span class="history-num">51</span>
                             <span class="history-num">28</span>
                             <span class="history-num">67</span>
                             <span class="history-num">32</span>
-                            <span class="history-num">45</span>
                         </div>
                         
                         <!-- Main box in focus -->
@@ -492,22 +510,22 @@
                             <div class="box-details">PKG-2024-8847</div>
                         </div>
                         
-                        <!-- Target frame - smaller -->
+                        <!-- Target frame - SQUARE -->
                         <div class="target-frame">
                             <div class="detected-badge">+45</div>
                         </div>
                         
-                        <!-- Bottom panel -->
+                        <!-- Bottom panel - exact match -->
                         <div class="bottom-panel">
-                            <div class="hint-text">Tap a number to add it</div>
+                            <div class="hint-text">Point at numbers .01-99,999.99</div>
                             <div class="number-scroll">
                                 <div class="num-btn">45</div>
                                 <div class="num-btn">32</div>
                                 <div class="num-btn">18</div>
                                 <div class="num-btn">73</div>
                                 <div class="num-btn">91</div>
-                                <div class="num-btn">56</div>
                             </div>
+                            <div class="clear-detected">Clear Detected</div>
                         </div>
                     </div>
                 </div>
